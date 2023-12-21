@@ -20,7 +20,7 @@ pipeline {
                 sh 'docker image build -t $DOCKER_HUB_REPO:latest .'
                 sh 'docker image tag $DOCKER_HUB_REPO:latest $DOCKER_HUB_REPO:$BUILD_NUMBER'
                 
-                sh 'Run docker login -u thibaultdp -p dckr_pat_fqPqbnu_pKlpRR0iLOy8PVh7aW4'
+                sh 'docker login -u thibaultdp -p dckr_pat_fqPqbnu_pKlpRR0iLOy8PVh7aW4'
                 //  Pushing Image to Repository
                 sh 'docker push thibaultdp/jenkins-docker-image:$BUILD_NUMBER'
                 sh 'docker push thibaultdp/jenkins-docker-image:latest'
